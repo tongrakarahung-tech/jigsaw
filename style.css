@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+#jigsaw-container {
+    /* กำหนดขนาดตามภาพต้นฉบับ */
+    width: 600px; 
+    height: 900px; 
+    margin: 20px auto;
+    
+    display: grid;
+    /* grid-template-columns จะถูกกำหนดโดย script.js */
+    
+    border: 3px solid #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.piece {
+    /* คุณสมบัติของชิ้นส่วนแต่ละชิ้น */
+    background-image: url('851211.jpg'); 
+    background-size: 600px 900px; /* ขนาดภาพพื้นหลังเต็ม */
+    cursor: pointer;
+    border: 1px solid #ccc; 
+    box-sizing: border-box; /* สำคัญเพื่อให้ border ไม่ไปเพิ่มขนาดรวม */
+    transition: transform 0.1s ease-out; /* เพื่อให้ดูดีขึ้นเมื่อมีการเลือก */
+}
+
+/* สไตล์เมื่อชิ้นส่วนถูกเลือก */
+.selected {
+    border: 3px solid red !important;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    z-index: 10; /* ให้ชิ้นส่วนที่เลือกอยู่ด้านบน */
+    transform: scale(1.02);
+}
+
+#shuffle-button {
+    padding: 12px 25px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+#shuffle-button:hover {
+    background-color: #45a049;
+}
